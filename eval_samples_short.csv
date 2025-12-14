@@ -1,0 +1,241 @@
+index,input,gt,pred,gen
+0,"Table: user_id, amount, location, time_of_day
+Row: 1102, 80.57, StoreB, evening
+Context: Analyze whether this transaction is suspicious.",NORMAL,NORMAL,"You are an AI financial analyst.
+Table: user_id, amount, location, time_of_day
+Row: 1102, 80.57, StoreB, evening
+Context: Analyze whether this transaction is suspicious.
+Answer:
+ANSWER: NORMAL || This transaction amount is within the expected normal range."
+1,"Table: user_id, amount, location, time_of_day
+Row: 1435, 80.6, StoreA, afternoon
+Context: Analyze whether this transaction is suspicious.",NORMAL,NORMAL,"You are an AI financial analyst.
+Table: user_id, amount, location, time_of_day
+Row: 1435, 80.6, StoreA, afternoon
+Context: Analyze whether this transaction is suspicious.
+Answer:
+ANSWER: NORMAL || This transaction amount is within the expected normal range."
+2,"Table: user_id, amount, location, time_of_day
+Row: 1860, 98.77, StoreB, evening
+Context: Analyze whether this transaction is suspicious.",NORMAL,NORMAL,"You are an AI financial analyst.
+Table: user_id, amount, location, time_of_day
+Row: 1860, 98.77, StoreB, evening
+Context: Analyze whether this transaction is suspicious.
+Answer:
+ANSWER: NORMAL || This transaction amount is within the expected normal range."
+3,"Table: user_id, amount, location, time_of_day
+Row: 1270, 69.68, StoreB, morning
+Context: Analyze whether this transaction is suspicious.",NORMAL,NORMAL,"You are an AI financial analyst.
+Table: user_id, amount, location, time_of_day
+Row: 1270, 69.68, StoreB, morning
+Context: Analyze whether this transaction is suspicious.
+Answer:
+ANSWER: NORMAL || This transaction amount is within the expected normal range."
+4,"Table: user_id, amount, location, time_of_day
+Row: 1106, 1966.08, StoreB, evening
+Context: Analyze whether this transaction is suspicious.",ANOMALY,ANOMALY,"You are an AI financial analyst.
+Table: user_id, amount, location, time_of_day
+Row: 1106, 1966.08, StoreB, evening
+Context: Analyze whether this transaction is suspicious.
+Answer:
+ANSWER: ANOMALY"
+5,"Table: user_id, amount, location, time_of_day
+Row: 1071, 70.75, StoreC, afternoon
+Context: Analyze whether this transaction is suspicious.",NORMAL,NORMAL,"You are an AI financial analyst.
+Table: user_id, amount, location, time_of_day
+Row: 1071, 70.75, StoreC, afternoon
+Context: Analyze whether this transaction is suspicious.
+Answer:
+ANSWER: NORMAL || This transaction amount is within the expected normal range."
+6,"Table: user_id, amount, location, time_of_day
+Row: 1700, 71.31, StoreB, evening
+Context: Analyze whether this transaction is suspicious.",NORMAL,NORMAL,"You are an AI financial analyst.
+Table: user_id, amount, location, time_of_day
+Row: 1700, 71.31, StoreB, evening
+Context: Analyze whether this transaction is suspicious.
+Answer:
+ANSWER: NORMAL || This transaction amount is within the expected normal range."
+7,"Table: user_id, amount, location, time_of_day
+Row: 1020, 73.82, StoreC, morning
+Context: Analyze whether this transaction is suspicious.",NORMAL,NORMAL,"You are an AI financial analyst.
+Table: user_id, amount, location, time_of_day
+Row: 1020, 73.82, StoreC, morning
+Context: Analyze whether this transaction is suspicious.
+Answer:
+ANSWER: NORMAL || This transaction amount is within the expected normal range."
+8,"Table: user_id, amount, location, time_of_day
+Row: 1614, 84.44, StoreA, afternoon
+Context: Analyze whether this transaction is suspicious.",NORMAL,NORMAL,"You are an AI financial analyst.
+Table: user_id, amount, location, time_of_day
+Row: 1614, 84.44, StoreA, afternoon
+Context: Analyze whether this transaction is suspicious.
+Answer:
+ANSWER: NORMAL || This transaction amount is within the expected normal range."
+9,"Table: user_id, amount, location, time_of_day
+Row: 1121, 70.43, StoreA, evening
+Context: Analyze whether this transaction is suspicious.",NORMAL,NORMAL,"You are an AI financial analyst.
+Table: user_id, amount, location, time_of_day
+Row: 1121, 70.43, StoreA, evening
+Context: Analyze whether this transaction is suspicious.
+Answer:
+ANSWER: NORMAL || This transaction amount is within the expected normal range."
+10,"Table: user_id, amount, location, time_of_day
+Row: 1466, 105.12, StoreC, afternoon
+Context: Analyze whether this transaction is suspicious.",NORMAL,NORMAL,"You are an AI financial analyst.
+Table: user_id, amount, location, time_of_day
+Row: 1466, 105.12, StoreC, afternoon
+Context: Analyze whether this transaction is suspicious.
+Answer:
+ANSWER: NORMAL || This transaction amount is within the expected normal range."
+11,"Table: user_id, amount, location, time_of_day
+Row: 1214, 62.11, StoreC, afternoon
+Context: Analyze whether this transaction is suspicious.",NORMAL,NORMAL,"You are an AI financial analyst.
+Table: user_id, amount, location, time_of_day
+Row: 1214, 62.11, StoreC, afternoon
+Context: Analyze whether this transaction is suspicious.
+Answer:
+ANSWER: NORMAL || This transaction amount is within the expected normal range."
+12,"Table: user_id, amount, location, time_of_day
+Row: 1330, 76.26, StoreC, afternoon
+Context: Analyze whether this transaction is suspicious.",NORMAL,NORMAL,"You are an AI financial analyst.
+Table: user_id, amount, location, time_of_day
+Row: 1330, 76.26, StoreC, afternoon
+Context: Analyze whether this transaction is suspicious.
+Answer:
+ANSWER: NORMAL || This transaction amount is within the expected normal range."
+13,"Table: user_id, amount, location, time_of_day
+Row: 1458, 71.21, StoreB, evening
+Context: Analyze whether this transaction is suspicious.",NORMAL,NORMAL,"You are an AI financial analyst.
+Table: user_id, amount, location, time_of_day
+Row: 1458, 71.21, StoreB, evening
+Context: Analyze whether this transaction is suspicious.
+Answer:
+ANSWER: NORMAL || This transaction amount is within the expected normal range."
+14,"Table: user_id, amount, location, time_of_day
+Row: 1087, 108.94, StoreA, afternoon
+Context: Analyze whether this transaction is suspicious.",NORMAL,NORMAL,"You are an AI financial analyst.
+Table: user_id, amount, location, time_of_day
+Row: 1087, 108.94, StoreA, afternoon
+Context: Analyze whether this transaction is suspicious.
+Answer:
+ANSWER: NORMAL || This transaction amount is within the expected normal range."
+15,"Table: user_id, amount, location, time_of_day
+Row: 1372, 83.93, StoreC, evening
+Context: Analyze whether this transaction is suspicious.",NORMAL,NORMAL,"You are an AI financial analyst.
+Table: user_id, amount, location, time_of_day
+Row: 1372, 83.93, StoreC, evening
+Context: Analyze whether this transaction is suspicious.
+Answer:
+ANSWER: NORMAL || This transaction amount is within the expected normal range."
+16,"Table: user_id, amount, location, time_of_day
+Row: 1099, 100.64, StoreB, morning
+Context: Analyze whether this transaction is suspicious.",NORMAL,NORMAL,"You are an AI financial analyst.
+Table: user_id, amount, location, time_of_day
+Row: 1099, 100.64, StoreB, morning
+Context: Analyze whether this transaction is suspicious.
+Answer:
+ANSWER: NORMAL || This transaction amount is within the expected normal range."
+17,"Table: user_id, amount, location, time_of_day
+Row: 1871, 50.29, StoreA, evening
+Context: Analyze whether this transaction is suspicious.",NORMAL,NORMAL,"You are an AI financial analyst.
+Table: user_id, amount, location, time_of_day
+Row: 1871, 50.29, StoreA, evening
+Context: Analyze whether this transaction is suspicious.
+Answer:
+ANSWER: NORMAL || This transaction amount is within the expected normal range."
+18,"Table: user_id, amount, location, time_of_day
+Row: 1663, 85.34, StoreB, morning
+Context: Analyze whether this transaction is suspicious.",NORMAL,NORMAL,"You are an AI financial analyst.
+Table: user_id, amount, location, time_of_day
+Row: 1663, 85.34, StoreB, morning
+Context: Analyze whether this transaction is suspicious.
+Answer:
+ANSWER: NORMAL || This transaction amount is within the expected normal range."
+19,"Table: user_id, amount, location, time_of_day
+Row: 1130, 97.79, StoreA, evening
+Context: Analyze whether this transaction is suspicious.",NORMAL,NORMAL,"You are an AI financial analyst.
+Table: user_id, amount, location, time_of_day
+Row: 1130, 97.79, StoreA, evening
+Context: Analyze whether this transaction is suspicious.
+Answer:
+ANSWER: NORMAL || This transaction amount is within the expected normal range."
+20,"Table: user_id, amount, location, time_of_day
+Row: 1661, 81.65, StoreB, afternoon
+Context: Analyze whether this transaction is suspicious.",NORMAL,NORMAL,"You are an AI financial analyst.
+Table: user_id, amount, location, time_of_day
+Row: 1661, 81.65, StoreB, afternoon
+Context: Analyze whether this transaction is suspicious.
+Answer:
+ANSWER: NORMAL || This transaction amount is within the expected normal range."
+21,"Table: user_id, amount, location, time_of_day
+Row: 1308, 101.31, StoreA, evening
+Context: Analyze whether this transaction is suspicious.",NORMAL,NORMAL,"You are an AI financial analyst.
+Table: user_id, amount, location, time_of_day
+Row: 1308, 101.31, StoreA, evening
+Context: Analyze whether this transaction is suspicious.
+Answer:
+ANSWER: NORMAL || This transaction amount is within the expected normal range."
+22,"Table: user_id, amount, location, time_of_day
+Row: 1769, 69.65, StoreA, afternoon
+Context: Analyze whether this transaction is suspicious.",NORMAL,NORMAL,"You are an AI financial analyst.
+Table: user_id, amount, location, time_of_day
+Row: 1769, 69.65, StoreA, afternoon
+Context: Analyze whether this transaction is suspicious.
+Answer:
+ANSWER: NORMAL || This transaction amount is within the expected normal range."
+23,"Table: user_id, amount, location, time_of_day
+Row: 1343, 108.19, StoreB, morning
+Context: Analyze whether this transaction is suspicious.",NORMAL,NORMAL,"You are an AI financial analyst.
+Table: user_id, amount, location, time_of_day
+Row: 1343, 108.19, StoreB, morning
+Context: Analyze whether this transaction is suspicious.
+Answer:
+ANSWER: NORMAL || This transaction amount is within the expected normal range."
+24,"Table: user_id, amount, location, time_of_day
+Row: 1491, 125.98, StoreC, evening
+Context: Analyze whether this transaction is suspicious.",NORMAL,NORMAL,"You are an AI financial analyst.
+Table: user_id, amount, location, time_of_day
+Row: 1491, 125.98, StoreC, evening
+Context: Analyze whether this transaction is suspicious.
+Answer:
+ANSWER: NORMAL || This transaction amount is within the expected normal range."
+25,"Table: user_id, amount, location, time_of_day
+Row: 1413, 72.74, StoreA, afternoon
+Context: Analyze whether this transaction is suspicious.",NORMAL,NORMAL,"You are an AI financial analyst.
+Table: user_id, amount, location, time_of_day
+Row: 1413, 72.74, StoreA, afternoon
+Context: Analyze whether this transaction is suspicious.
+Answer:
+ANSWER: NORMAL || This transaction amount is within the expected normal range."
+26,"Table: user_id, amount, location, time_of_day
+Row: 1805, 71.09, StoreC, morning
+Context: Analyze whether this transaction is suspicious.",NORMAL,NORMAL,"You are an AI financial analyst.
+Table: user_id, amount, location, time_of_day
+Row: 1805, 71.09, StoreC, morning
+Context: Analyze whether this transaction is suspicious.
+Answer:
+ANSWER: NORMAL || This transaction amount is within the expected normal range."
+27,"Table: user_id, amount, location, time_of_day
+Row: 1385, 109.07, StoreB, morning
+Context: Analyze whether this transaction is suspicious.",NORMAL,NORMAL,"You are an AI financial analyst.
+Table: user_id, amount, location, time_of_day
+Row: 1385, 109.07, StoreB, morning
+Context: Analyze whether this transaction is suspicious.
+Answer:
+ANSWER: NORMAL || This transaction amount is within the expected normal range."
+28,"Table: user_id, amount, location, time_of_day
+Row: 1191, 111.59, StoreC, evening
+Context: Analyze whether this transaction is suspicious.",NORMAL,NORMAL,"You are an AI financial analyst.
+Table: user_id, amount, location, time_of_day
+Row: 1191, 111.59, StoreC, evening
+Context: Analyze whether this transaction is suspicious.
+Answer:
+ANSWER: NORMAL || This transaction amount is within the expected normal range."
+29,"Table: user_id, amount, location, time_of_day
+Row: 1955, 69.54, StoreC, morning
+Context: Analyze whether this transaction is suspicious.",NORMAL,NORMAL,"You are an AI financial analyst.
+Table: user_id, amount, location, time_of_day
+Row: 1955, 69.54, StoreC, morning
+Context: Analyze whether this transaction is suspicious.
+Answer:
+ANSWER: NORMAL || This transaction amount is within the expected normal range."
