@@ -1,4 +1,5 @@
-Multi-Model LLM Anomaly Detection System
+**🚀 Multi-Model LLM Anomaly Detection System**
+
 Fine-Tuned LLaMA LoRA + Qwen + Ensemble Router + Streamlit UI
 
 This project is a GenAI-powered anomaly detection system built using:
@@ -15,13 +16,14 @@ Streamlit User Interface
 
 It supports CSV-based tabular anomaly detection and returns structured outputs:
 
-<LABEL> || <EXPLANATION>
+LABEL || EXPLANATION
 
 
 This project demonstrates LLM fine-tuning, model orchestration, data engineering, and UI deployment, making it suitable for Data Science, ML Engineer, and GenAI Engineer portfolio use.
 
- Features
- 1. Fine-Tuned LLaMA Model (LoRA)
+**📌 Features**
+
+ **1. Fine-Tuned LLaMA Model (LoRA)**
 
 Trained on synthetic financial transaction data
 
@@ -29,7 +31,7 @@ Learns anomaly vs. normal patterns
 
 Produces structured explanations
 
- 2. Multi-Model Routing (Qwen + LLaMA + Ensemble)
+ **2. Multi-Model Routing (Qwen + LLaMA + Ensemble)**
 
 LLaMA: fine-tuned LoRA weights
 
@@ -37,7 +39,7 @@ Qwen: open-source reasoning baseline
 
 Ensemble: safety-oriented combined decision
 
- 3. Streamlit UI
+ **3. Streamlit UI**
 
 Upload CSV files
 
@@ -49,13 +51,13 @@ Highlighted output table
 
 Downloadable results
 
- 4. Output Normalization Engine
+ **4. Output Normalization Engine**
 
 Ensures every LLM output follows consistent format:
 
 ANOMALY || This transaction amount is unusually high...
 
- 5. Modular Architecture
+ **5. Modular Architecture**
 
 models/ → model wrappers
 
@@ -65,40 +67,21 @@ utils/ → normalization helpers
 
 app/ → Streamlit UI
 
- Project Architecture
-llm-anomaly-project/
-│
-├── models/
-│   ├── llama_lora.py          # Fine-tuned LLaMA loader
-│   ├── qwen_model.py          # Qwen base model
-│
-├── router/
-│   ├── model_router.py        # Multi-model selection + ensemble logic
-│   ├── test_router.py         # Quick CLI tests
-│
-├── utils/
-│   ├── normalize_output.py    # Output normalization engine
-│
-├── app/
-│   ├── streamlit_app.py       # Frontend UI
-│
-├── train_lora.py              # Original LoRA training script
-├── train_lora_polished.py     # Format-polishing LoRA pass
-├── inference_lora_polished.py # Polished inference testing
-├── evaluate_lora.py           # Model evaluation pipeline
-├── generate_data.py           # Raw synthetic dataset generator
-├── build_jsonl_dataset.py     # JSONL prompt dataset builder
-│
-└── README.md
+**🧱 Project Architecture**
 
-🧪 Usage Guide
-1️ Install dependencies
+<img width="552" height="489" alt="Screenshot 2025-12-14 at 6 39 49 PM" src="https://github.com/user-attachments/assets/1fb96a61-4e9d-43f1-9d61-0f985b1cc675" />
+
+**🧪 Usage Guide**
+
+**1️ Install dependencies**
+
 pip install -r requirements.txt
 
 
 (Or your current environment requirements.)
 
-2️ Run the Streamlit App
+**2️ Run the Streamlit App**
+
 streamlit run app/streamlit_app.py
 
 
@@ -110,7 +93,7 @@ user_id,amount,location
 103,4500,StoreC
 ...
 
-3️ Choose your model
+**3️ Choose your model**
 
 llama → fine-tuned LoRA model
 
@@ -118,18 +101,19 @@ qwen → baseline open-source model
 
 ensemble → hybrid safer classifier
 
-4️ Output Format
+**4️ Output Format**
 
 Each classifier returns:
 
-<LABEL> || <EXPLANATION>
+LABEL || EXPLANATION
 
 
 Example:
 
 ANOMALY || The amount 4500 is significantly higher than typical transactions.
 
- Model Details
+**🧠 Model Details**
+
 Fine-Tuned LLaMA (LoRA)
 
 Base model: meta-llama/Llama-3.2-1B-Instruct
@@ -152,7 +136,7 @@ Ensemble Logic
 If LLaMA or Qwen flags ANOMALY → label = ANOMALY
 Else label = NORMAL
 
- Performance Notes
+**🏎️ Performance Notes**
 
 First UI load may take a few seconds due to model loading
 
@@ -160,7 +144,7 @@ Cached model loading ensures fast switching
 
 Best run using Apple Silicon with MPS acceleration (your setup)
 
- Future Improvements
+**🎯 Future Improvements**
 
 Add improved anomaly logic (statistical or ML-based)
 
@@ -174,12 +158,12 @@ Add database integration (Snowflake / BigQuery)
 
 Deploy Streamlit app online (Streamlit Cloud, HuggingFace Spaces)
 
- License
+**📄 License**
 
 You can choose any open-source license.
 MIT License is recommended and standard.
 
- Acknowledgements
+**🙌 Acknowledgements**
 
 This project integrates:
 
@@ -193,7 +177,7 @@ Streamlit UI Framework
 
 Qwen & LLaMA community models
 
- Final Notes
+**🚀 Final Notes**
 
 This project is highly impressive in a portfolio because it demonstrates:
 
@@ -208,6 +192,3 @@ Routing systems
 UI + MLOps mindset
 
 Evaluation and dataset engineering
-
-Most students never go beyond a Colab notebook —
-you built an actual GenAI system.
