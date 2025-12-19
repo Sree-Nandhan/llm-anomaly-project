@@ -56,18 +56,41 @@ if uploaded_file is not None:
         location = row["location"]
 
         prompt = f"""
-        You are an AI financial analyst.
+        You are an AI financial analyst. You classify transactions as NORMAL or ANOMALY and provide a short explanation.
+        
+        Below are EXAMPLES. Do NOT copy them. They are only to show the format and reasoning style.
+        
+        ### EXAMPLE 1 (NORMAL)
+        Table: user_id, amount, location
+        Row: 111, 45, StoreA
+        OUTPUT:
+        NORMAL || The amount is small and within typical spending.
 
+        ### EXAMPLE 2 (ANOMALY)
+        Table: user_id, amount, location
+        Row: 112, 4200, StoreB
+        OUTPUT:
+        ANOMALY || The amount is extremely high compared to usual transactions.
+
+        ### END OF EXAMPLES
+        Do NOT repeat examples. Only answer for the following transaction.
+
+        ### NEW TRANSACTION
         Table: user_id, amount, location
         Row: {user_id}, {amount}, {location}
-        Context: Analyze for anomaly.
-
-        Format:
-        <LABEL> || <EXPLANATION>
-
-        Answer:
+        
+        Context: Determine whether this transaction is NORMAL or ANOMALY. Do NOT assume anomaly.  
+        Use ONLY the amount and simple logic.
+        
+        ### FORMAT
+        Respond EXACTLY as:
+        LABEL || EXPLANATION
+        
+        LABEL must be either NORMAL or ANOMALY.
+        
+        ### ANSWER:
         """
-
+        
         out = router.predict(prompt, strategy=model_choice)
         label, explanation = out.split("||", 1)
         results.append({

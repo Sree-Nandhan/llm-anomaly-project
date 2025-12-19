@@ -1,0 +1,12 @@
+{"input": "Table: user_id, amount, location\nRow: 1111, 50, StoreA", "output": "NORMAL || The amount $50 is typical for normal spending at this store."}
+{"input": "Table: user_id, amount, location\nRow: 1111, 75, StoreA", "output": "NORMAL || The amount $75 is typical for normal spending at this store."}
+{"input": "Table: user_id, amount, location\nRow: 1111, 90, StoreA", "output": "NORMAL || The amount $90 is typical for normal spending at this store."}
+{"input": "Table: user_id, amount, location\nRow: 1111, 120, StoreA", "output": "NORMAL || The amount $120 is typical for normal spending at this store."}
+{"input": "Table: user_id, amount, location\nRow: 1111, 150, StoreA", "output": "NORMAL || The amount $150 is typical for normal spending at this store."}
+{"input": "Table: user_id, amount, location\nRow: 1111, 180, StoreA", "output": "NORMAL || The amount $180 is typical for normal spending at this store."}
+{"input": "Table: user_id, amount, location\nRow: 1111, 200, StoreA", "output": "NORMAL || The amount $200 is typical for normal spending at this store."}
+{"input": "Table: user_id, amount, location\nRow: 2222, 0.5, StoreB", "output": "ANOMALY || The amount $0.5 is extremely small and may indicate refund fraud or abnormal activity."}
+{"input": "Table: user_id, amount, location\nRow: 2222, 1.2, StoreB", "output": "ANOMALY || The amount $1.2 is extremely small and may indicate refund fraud or abnormal activity."}
+{"input": "Table: user_id, amount, location\nRow: 2222, 2.5, StoreB", "output": "ANOMALY || The amount $2.5 is extremely small and may indicate refund fraud or abnormal activity."}
+{"input": "Table: user_id, amount, location\nRow: 2222, 3.0, StoreB", "output": "ANOMALY || The amount $3.0 is extremely small and may indicate refund fraud or abnormal activity."}
+{"input": "Table: user_id, amount, location\nRow: 2222, 4.5, StoreB", "output": "ANOMALY || The amount $4.5 is extremely small and may indicate refund fraud or abnormal activity."}
