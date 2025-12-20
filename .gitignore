@@ -1,0 +1,9 @@
+# Model artifacts
+lora-output*/
+*.pt
+*.bin
+*.safetensors
+
+# Python cache
+__pycache__/
+*.pyc
