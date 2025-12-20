@@ -1,0 +1,11 @@
+user_id,amount,location,label,anomaly_prob,normal_prob,explanation
+101,80,StoreA,NORMAL,0.0,1.0,This transaction amount ($80) is typical for normal spending.
+102,120,StoreB,NORMAL,0.0,1.0,This transaction amount ($120) is typical for normal spending.
+103,4500,StoreC,ANOMALY,1.0,0.0,This transaction amount ($4500) is unusually high compared to normal spending levels.
+104,75,StoreA,NORMAL,0.0,1.0,This transaction amount ($75) is typical for normal spending.
+105,900,StoreB,NORMAL,0.0,1.0,This transaction amount ($900) is typical for normal spending behavior. The location ('StoreB') is also common for normal purchases.
+106,50,StoreC,NORMAL,0.0,1.0,This transaction amount ($50) is relatively low compared to normal spending levels.
+107,3200,StoreB,ANOMALY,1.0,0.0,This transaction amount ($3200) is unusually high compared to normal spending levels.
+108,78,StoreA,NORMAL,0.0,1.0,This transaction amount ($78) is relatively low compared to normal spending levels.
+109,150,StoreC,NORMAL,0.0,1.0,This transaction amount ($150) is typical for normal spending.
+110,6000,StoreB,ANOMALY,1.0,0.0,This transaction amount ($6000) is unusually high compared to normal spending levels.
