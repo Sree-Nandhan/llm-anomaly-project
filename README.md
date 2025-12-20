@@ -1,194 +1,187 @@
-**🚀 Multi-Model LLM Anomaly Detection System**
+**🚨 Hybrid AI Anomaly Detection System**
 
-Fine-Tuned LLaMA LoRA + Qwen + Ensemble Router + Streamlit UI
+**(ML + LLM Fine-Tuning + LangChain)**
 
-This project is a GenAI-powered anomaly detection system built using:
+**📌 Overview**
 
-Fine-tuned LLaMA-3.2-1B-Instruct (LoRA)
+This project implements a **production-style anomaly detection system** for transactional data using a **hybrid architecture** that combines:
 
-Qwen1.5B-Chat (open-source)
+**Classical Machine Learning** for reliable numeric anomaly classification
 
-Ensemble routing logic
+**Large Language Models (LLMs)** for human-readable explanations
 
-Custom normalization pipeline
+**LoRA fine-tuning (PEFT)** to adapt a local LLaMA model
 
-Streamlit User Interface
+**LangChain Core (Runnable API)** to orchestrate explanation generation
 
-It supports CSV-based tabular anomaly detection and returns structured outputs:
+The system is designed for **batch CSV analysis**, mirroring how anomaly and fraud detection pipelines operate in real-world enterprise systems.
 
-LABEL || EXPLANATION
+**❓ Motivation**
 
+Pure LLM-based anomaly detection systems often fail when:
 
-This project demonstrates LLM fine-tuning, model orchestration, data engineering, and UI deployment, making it suitable for Data Science, ML Engineer, and GenAI Engineer portfolio use.
+numeric thresholds matter
 
-**📌 Features**
+deterministic decisions are required
 
- **1. Fine-Tuned LLaMA Model (LoRA)**
+hallucination or inconsistency is unacceptable
 
-Trained on synthetic financial transaction data
+At the same time, traditional ML models lack **interpretability and analyst-friendly explanations**.
 
-Learns anomaly vs. normal patterns
+This project intentionally separates:
 
-Produces structured explanations
+**decision-making (ML)**
 
- **2. Multi-Model Routing (Qwen + LLaMA + Ensemble)**
+**explanation generation (LLM)**
 
-LLaMA: fine-tuned LoRA weights
+to achieve both correctness and explainability.
 
-Qwen: open-source reasoning baseline
+**🏗️ System Architecture**
+**High-level pipeline:**
 
-Ensemble: safety-oriented combined decision
+<img width="421" height="274" alt="Screenshot 2025-12-20 at 3 09 45 PM" src="https://github.com/user-attachments/assets/a9cc080f-7fb4-4306-9fc3-ff8da03ab4a9" />
 
- **3. Streamlit UI**
+**🔍 Core Components**
+**1️⃣ Machine Learning — Decision Layer**
 
-Upload CSV files
+**Model:** RandomForestClassifier
 
-Select your model: LLaMA / Qwen / Ensemble
+**Role:** Deterministic anomaly classification
 
-View anomaly classifications
+**Output:** NORMAL / ANOMALY + probability scores
 
-Highlighted output table
+**Features used:**
 
-Downloadable results
+Transaction amount
 
- **4. Output Normalization Engine**
+Log-scaled amount
 
-Ensures every LLM output follows consistent format:
+Z-score of amount
 
-ANOMALY || This transaction amount is unusually high...
+Flags for extremely small or large values
 
- **5. Modular Architecture**
+Transaction location (categorical)
 
-models/ → model wrappers
+The ML model is the single source of truth for anomaly decisions.
 
-router/ → model routing logic
+**2️⃣ Large Language Model — Explanation Layer**
 
-utils/ → normalization helpers
+**Model:** LLaMA (1B parameters)
 
-app/ → Streamlit UI
+**Fine-tuning:** LoRA (via PEFT)
 
-**🧱 Project Architecture**
+**Role:** Generate concise, domain-specific explanations
 
-<img width="552" height="489" alt="Screenshot 2025-12-14 at 6 39 49 PM" src="https://github.com/user-attachments/assets/1fb96a61-4e9d-43f1-9d61-0f985b1cc675" />
+Important design choice:
 
-**🧪 Usage Guide**
+The LLM never decides the label.
+It only explains the classifier’s decision.
 
-**1️ Install dependencies**
+This prevents hallucination and contradictory outputs.
 
-pip install -r requirements.txt
+**🔧 LoRA & PEFT (Why They Matter)**
+**PEFT (Parameter-Efficient Fine-Tuning)**
 
+PEFT enables fine-tuning large models by updating only a small subset of parameters, keeping the base model frozen.
 
-(Or your current environment requirements.)
+**LoRA (Low-Rank Adaptation)**
 
-**2️ Run the Streamlit App**
+LoRA injects lightweight trainable matrices into attention layers, allowing:
 
-streamlit run app/streamlit_app.py
+Efficient domain adaptation
 
+Low memory usage
 
-Upload a file shaped like:
+Local fine-tuning on consumer hardware
 
+In this project, LoRA is used to:
+
+Adapt LLaMA to the transaction anomaly domain
+
+Improve explanation consistency and clarity
+
+Avoid retraining billions of parameters
+
+**🔗 LangChain Integration**
+
+This project integrates **LangChain Core (Runnable API)** to orchestrate the LLM explanation step.
+
+LangChain is used for:
+
+Prompt templating
+
+Runnable composition
+
+Clean separation between logic layers
+
+Future extensibility (RAG, routing, logging)
+
+The system uses modern LangChain primitives rather than deprecated APIs.
+
+**🖥️ User Interface**
+
+A **Gradio-based UI** is provided for batch analysis:
+
+Upload a CSV file
+
+Analyze all transactions
+
+View anomaly labels, probabilities, and explanations
+
+Download enriched results as a CSV
+
+This reflects enterprise-style batch workflows, not toy single-input demos.
+
+**📄 Input Format**
 user_id,amount,location
-101,80,StoreA
-102,120,StoreB
-103,4500,StoreC
-...
+1001,75,StoreA
+1002,4500,StoreB
+1003,2.5,StoreC
+1004,120,RareStoreX
 
-**3️ Choose your model**
+**📤 Output Example**
+user_id	amount	location	label	anomaly_prob	explanation
+1001	75	StoreA	NORMAL	0.00	Typical spending behavior
+1002	4500	StoreB	ANOMALY	1.00	Unusually high transaction
+1003	2.5	StoreC	ANOMALY	1.00	Extremely low value
+1004	120	RareStoreX	ANOMALY	0.99	Unusual transaction location
 
-llama → fine-tuned LoRA model
+**🧠 Key Design Insights**
 
-qwen → baseline open-source model
+LLMs are not reliable numeric classifiers
 
-ensemble → hybrid safer classifier
+Classical ML models excel at deterministic decisions
 
-**4️ Output Format**
+LLMs excel at explanation and communication
 
-Each classifier returns:
+Hybrid ML + LLM architectures are standard in production
 
-LABEL || EXPLANATION
+Separating decision logic from explanation logic improves robustness
 
+**🚀 Future Extensions**
 
-Example:
+Real-time streaming ingestion
 
-ANOMALY || The amount 4500 is significantly higher than typical transactions.
+Retrieval-augmented explanations (RAG)
 
-**🧠 Model Details**
+Model routing via LangChain
 
-Fine-Tuned LLaMA (LoRA)
+API deployment (FastAPI)
 
-Base model: meta-llama/Llama-3.2-1B-Instruct
+Analyst feedback loops
 
-Method: QLoRA-style adapter training
+**🏁 Conclusion**
 
-Dataset: 2,000 synthetic financial rows
+This project demonstrates a realistic, production-inspired approach to explainable anomaly detection by combining:
 
-Eval accuracy: 100% on validation subset
+Classical ML for correctness
 
-Polished using instructional prompt-formatting pass
+LoRA-fine-tuned LLMs for interpretability
 
-Qwen1.5B-Chat Model
+LangChain for orchestration
 
-Serves as a general reasoning companion
+Clean system design principles
 
-Produces richer explanations
+**📬 Contact**
 
-Ensemble Logic
-If LLaMA or Qwen flags ANOMALY → label = ANOMALY
-Else label = NORMAL
-
-**🏎️ Performance Notes**
-
-First UI load may take a few seconds due to model loading
-
-Cached model loading ensures fast switching
-
-Best run using Apple Silicon with MPS acceleration (your setup)
-
-**🎯 Future Improvements**
-
-Add improved anomaly logic (statistical or ML-based)
-
-Tune explanation generation consistency
-
-Add GPT-4/Gemini as an additional model option
-
-Add a confidence score + calibration
-
-Add database integration (Snowflake / BigQuery)
-
-Deploy Streamlit app online (Streamlit Cloud, HuggingFace Spaces)
-
-**📄 License**
-
-You can choose any open-source license.
-MIT License is recommended and standard.
-
-**🙌 Acknowledgements**
-
-This project integrates:
-
-HuggingFace Transformers
-
-LangChain Model Routing
-
-PEFT (LoRA Adapters)
-
-Streamlit UI Framework
-
-Qwen & LLaMA community models
-
-**🚀 Final Notes**
-
-This project is highly impressive in a portfolio because it demonstrates:
-
-Full LLM lifecycle
-
-Fine-tuning with LoRA
-
-Multi-model engineering
-
-Routing systems
-
-UI + MLOps mindset
-
-Evaluation and dataset engineering
+If you’d like to discuss this project or its design decisions, feel free to reach out.
