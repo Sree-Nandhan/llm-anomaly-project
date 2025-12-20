@@ -37,11 +37,15 @@ This project intentionally separates:
 to achieve both correctness and explainability.
 
 **🏗️ System Architecture**
+
 **High-level pipeline:**
+
 
 <img width="421" height="274" alt="Screenshot 2025-12-20 at 3 09 45 PM" src="https://github.com/user-attachments/assets/a9cc080f-7fb4-4306-9fc3-ff8da03ab4a9" />
 
+
 **🔍 Core Components**
+
 **1️⃣ Machine Learning — Decision Layer**
 
 **Model:** RandomForestClassifier
@@ -133,18 +137,16 @@ Download enriched results as a CSV
 This reflects enterprise-style batch workflows, not toy single-input demos.
 
 **📄 Input Format**
-user_id,amount,location
-1001,75,StoreA
-1002,4500,StoreB
-1003,2.5,StoreC
-1004,120,RareStoreX
+
+
+<img width="262" height="138" alt="Screenshot 2025-12-20 at 3 13 17 PM" src="https://github.com/user-attachments/assets/4995065b-43c2-4408-bf72-0036ae9a62fc" />
+
 
 **📤 Output Example**
-user_id	amount	location	label	anomaly_prob	explanation
-1001	75	StoreA	NORMAL	0.00	Typical spending behavior
-1002	4500	StoreB	ANOMALY	1.00	Unusually high transaction
-1003	2.5	StoreC	ANOMALY	1.00	Extremely low value
-1004	120	RareStoreX	ANOMALY	0.99	Unusual transaction location
+
+
+<img width="780" height="284" alt="Screenshot 2025-12-20 at 3 13 57 PM" src="https://github.com/user-attachments/assets/b9ba7916-7e2c-40e2-b9f8-ad7ec18146c9" />
+
 
 **🧠 Key Design Insights**
 
