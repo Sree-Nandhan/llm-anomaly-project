@@ -136,6 +136,16 @@ Download enriched results as a CSV
 
 This reflects enterprise-style batch workflows, not toy single-input demos.
 
+**▶️ How to Run the Demo**
+
+1. Clone the repository
+2. Install dependencies
+3. Launch the Gradio app
+
+pip install -r requirements.txt
+
+python gradio_app.py
+
 **📄 Input Format**
 
 
@@ -174,7 +184,7 @@ Analyst feedback loops
 
 **🏁 Conclusion**
 
-This project demonstrates a realistic, production-inspired approach to explainable anomaly detection by combining:
+This project demonstrates a realistic, production-aligned approach to explainable anomaly detection by combining:
 
 Classical ML for correctness
 
